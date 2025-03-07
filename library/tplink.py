@@ -1,9 +1,11 @@
-from ansible.module_utils.basic import AnsibleModule
 from playwright.sync_api import Playwright, sync_playwright, expect, Page
-import playwright
-
 from ansible.module_utils.basic import AnsibleModule
-from ansible.module_utils.RouterConfig import RouterConfig
+
+try:
+    from ansible.module_utils.RouterConfig import RouterConfig
+except ImportError:
+    from module_utils.RouterConfig import RouterConfig
+
 
 
 def login(page, url, username, password):
@@ -17,9 +19,16 @@ def login(page, url, username, password):
       return page
 
 
-def run(page, config) -> Page:
-      config = RouterConfig(**config)
-      config.run
+def run(url, username, password, configuration):
+     with sync_playwright() as p:
+      browser = p.chromium.launch(headless=False)
+      context = browser.new_context()
+      page = context.new_page()
+      config = RouterConfig(**configuration)
+      print(config)
+      page = login(page, url, username, password)
+      context.close()
+      browser.close()
  
 
 def main():
@@ -39,13 +48,7 @@ def main():
     configuration = module.params['configuration']
 
     try:
-     with sync_playwright() as p:
-      browser = p.chromium.launch(headless=False)
-      context = browser.new_context()
-      page = context.new_page()
-      page = login(page, url, username, password)
-      context.close()
-      browser.close()
+      run(url, username, password, configuration)
       module.exit_json(changed=False)
 
     except Exception as e:
