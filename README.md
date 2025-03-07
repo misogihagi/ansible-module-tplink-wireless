@@ -3,6 +3,68 @@
 
 This repository provides a custom Ansible module that automates GUI configurations using Playwright. The module can be used to log into web applications as part of an Ansible automation workflow.
 
+## TODO
+
+- [] ステータス
+- [] クイック セットアップ
+- [] 動作するモード
+- [] ネットワーク
+  - [] WAN
+  - [] LAN
+  - [] MAC クローン
+- [] ワイヤレス 2.4GHz
+  - [] 基本設定
+  - [] WPS
+  - [] ワイヤレス セキュリティ
+  - [] ワイヤレス MAC フィルタリング
+  - [] ワイヤレス詳細設定
+  - [] ワイヤレス統計
+- [] ゲスト ネットワーク
+- [] DHCP
+  - [] DHCP 設定
+  - [] DHCP クライアント リスト
+  - [] アドレス予約
+- [] 転送
+  - [] 仮想 サーバー
+  - [] ポート トリガー
+  - [] DMZ
+  - [] UPnP
+- [] セキュリティ
+  - [] 基本セキュリティ
+  - [] 高度セキュリティ
+  - [] ローカル管理
+  - [] リモート管理
+- [] 保護者による制限
+- [] アクセス制御
+  - [] ルール
+  - [] ホスト
+  - [] ターゲット
+  - [] スケジュール
+- [] 高度経路
+  - [] 静的経路リスト
+  - [] システム経路テーブル
+- [] 帯域幅制御
+- [] IP & MAC バインディング
+  - [] バインディング 設定
+  - [] ARP リスト
+- [] 動的 DNS
+- [] IPv6
+  - [] IPv6 ステータス
+  - [] IPv6 WAN
+  - [] IPv6 LAN
+- [] システム ツール
+  - [] 時刻設定
+  - [] 診断
+  - [] ファームウェア アップグレード
+  - [] 工場出荷時の設定
+  - [] バックアップ & 復元
+  - [] 再起動
+  - [] パスワード
+  - [] システム ログ
+  - [] 統計
+- [] ログアウト
+
+
 ## Prerequisites
 
 Before using this module, ensure that you have the following dependencies installed:
