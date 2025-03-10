@@ -9,3 +9,12 @@ dependencies = [
     "playwright>=1.48.0",
     "pydantic>=2.10.6",
 ]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.15.0",
+    "ruff>=0.9.10",
+]
+
+[tool.mypy]
+strict = true
